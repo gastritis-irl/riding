@@ -22,8 +22,8 @@ variables:
   # Project root folder. Point to the folder containing manage.py file.
   projectRoot: $(System.DefaultWorkingDirectory)
 
-  # Python version: 3.7
-  pythonVersion: '3.7'
+  # Python version: 3.11
+  pythonVersion: '3.11'
 
 stages:
 - stage: Build
@@ -43,7 +43,7 @@ stages:
         source antenv/bin/activate
         python -m pip install --upgrade pip
         pip install setup
-        pip install -r requirements.txt
+        pip install -r ./keras_deploy/requirements.txt
       workingDirectory: $(projectRoot)
       displayName: "Install requirements"
 
